@@ -124,25 +124,25 @@ class Graph:
         """
         q = Queue()
 
-        # set to store visited nodes
+        # Set to store visited nodes
         visited = set()
 
-        # enqueue path to starting vertex
+        # Enqueue path to starting vertex
         q.enqueue([starting_vertex])
 
-        # while queue is not empty
+        # While queue is not empty
         while q.size():
-            # dequeue first path
+            # Dequeue first path
             path = q.dequeue()
 
-            # grab last vertex from path
+            # Grab last vertex from path
             v = path[-1]
-            # if it hasn't been visited
+            # If it hasn't been visited
             if v not in visited:
                 if v is destination_vertex:
                     return path
 
-                # mark visited
+                # Mark visited
                 visited.add(v)
 
                 for next_node in self.get_neighbors(v):
